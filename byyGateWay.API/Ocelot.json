@@ -1,0 +1,155 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/User/GetAllFromUser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7183
+        }
+      ],
+      "UpstreamPathTemplate": "/UserlarniOlish",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/GetById?id={id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7183
+        }
+      ],
+      "UpstreamPathTemplate": "/UserniIddanTop{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+
+      "DownstreamPathTemplate": "/api/User/Create{User}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7183
+        }
+      ],
+      "UpstreamPathTemplate": "/UserYarat{User}",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Car/GetAll",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7273
+        }
+      ],
+      "UpstreamPathTemplate": "/CarlarniOl",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Car/GetById?id={id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7273
+        }
+      ],
+      "UpstreamPathTemplate": "/CarniIddanTop",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+
+      "DownstreamPathTemplate": "/api/Car/Update{id}/{name}/{description}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7273
+        }
+      ],
+      "UpstreamPathTemplate": "/CarniYangila",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+
+      "DownstreamPathTemplate": "/api/Home/GetAll",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7010
+        }
+      ],
+      "UpstreamPathTemplate": "/HomeniOl",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Home/GetById?id={id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7010
+        }
+      ],
+      "UpstreamPathTemplate": "/HomeniOlIddan{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Home/Delete{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7010
+        }
+      ],
+      "UpstreamPathTemplate": "/HomeniOlibTashla{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    }
+  ],
+  {
+    "DownstreamPathTemplate": "/api/Phones/GetAll",
+    "DownstreamScheme": "https",
+    "DownstreamHostAndPorts": [
+      {
+        "Host": "localhost",
+        "Port": 7263
+      }
+    ],
+    "UpstreamPathTemplate": "/TelefonlarniOl",
+    "UpstreamHttpMethod": [ "Get" ]
+  },
+  {
+    "DownstreamPathTemplate": "/api/Phones/GetById?id={id}",
+    "DownstreamScheme": "https",
+    "DownstreamHostAndPorts": [
+      {
+        "Host": "localhost",
+        "Port": 7263
+      }
+    ],
+    "UpstreamPathTemplate": "/TelefonlarniOlIdOrqali{id}",
+    "UpstreamHttpMethod": [ "Get" ]
+  },
+  {
+    "DownstreamPathTemplate": "/api/Phones/Delete{id}",
+    "DownstreamScheme": "https",
+    "DownstreamHostAndPorts": [
+      {
+        "Host": "localhost",
+        "Port": 7263
+      }
+    ],
+    "UpstreamPathTemplate": "/TelefonniOlibTashla{id}",
+    "UpstreamHttpMethod": [ "Delete" ]
+  }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+  }
+}

@@ -22,13 +22,13 @@ namespace FirstWork.API.Controllers
                 var d = await _context.Users.ToListAsync();
                 return Ok(d);
         }
-        [HttpGet]
+        [HttpGet("{Id}")]
         public async ValueTask<IActionResult> GetByIdAsync(int id)
         {
             var d = await _context.Users.FirstOrDefaultAsync(x=>x.Id==id);
             return Ok(d);
         }
-        [HttpPost]
+        [HttpPost("{User}")]
         public async ValueTask<IActionResult> CreateAsync(User user)
         {
             await _context.Users.AddAsync(user);

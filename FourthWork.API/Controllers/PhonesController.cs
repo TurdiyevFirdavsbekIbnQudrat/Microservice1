@@ -18,12 +18,12 @@ namespace FourthWork.API.Controllers
         {
             return Ok(await context.Phones.ToListAsync());
         }
-        [HttpGet]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetByIdAsync(int id)
         {
             return Ok(await context.Phones.FirstOrDefaultAsync(x => x.id == id));
         }
-        [HttpPut]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteAsync(int id)
         {
             var d = await context.Phones.Where(x => x.id == id).ExecuteDeleteAsync();

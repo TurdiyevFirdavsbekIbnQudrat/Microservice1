@@ -18,12 +18,12 @@ namespace ThirdWork.API.Controllers
         {
             return Ok(await context.Homes.ToListAsync());
         }
-        [HttpGet]
+        [HttpGet("{id}")]
         public async ValueTask<IActionResult> GetByIdAsync(int id)
         {
             return Ok(await context.Homes.FirstOrDefaultAsync(x => x.Id == id));
         }
-        [HttpPut]
+        [HttpDelete("{id}")]
         public async ValueTask<IActionResult> DeleteAsync(int id)
         {
             var d=await context.Homes.Where(x=>x.Id==id).ExecuteDeleteAsync();

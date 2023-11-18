@@ -11,7 +11,7 @@ namespace SecondWork.API.Controllers
     public class CarController : ControllerBase
     {
         ApplicationDbContext context;
-        public CarController(ApplicationDbContext dbContext) 
+        public CarController(ApplicationDbContext dbContext)
         {
             context = dbContext;
         }
@@ -20,12 +20,12 @@ namespace SecondWork.API.Controllers
         {
             return Ok(await context.Car.ToListAsync());
         }
-        [HttpGet]
+        [HttpGet("{id")]
         public async ValueTask<IActionResult> GetByIdAsync(int id)
         {
             return Ok(await context.Car.FirstOrDefaultAsync(x=>x.Id==id));
         }
-        [HttpPut]
+        [HttpPut("{id")]
         public async ValueTask<IActionResult> UpdateAsync(int id,CarDto carDto)
         {
             Cars car = new Cars();
