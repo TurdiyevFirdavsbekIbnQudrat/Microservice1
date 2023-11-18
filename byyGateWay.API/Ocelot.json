@@ -1,6 +1,7 @@
 {
   "Routes": [
     {
+      // User
       "DownstreamPathTemplate": "/api/User/GetAllFromUser",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -13,7 +14,7 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/api/User/GetById?id={id}",
+      "DownstreamPathTemplate": "/api/User/GetById/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -21,7 +22,7 @@
           "Port": 7183
         }
       ],
-      "UpstreamPathTemplate": "/UserniIddanTop{id}",
+      "UpstreamPathTemplate": "/UserniIddanTop/{id}",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
@@ -37,6 +38,7 @@
       "UpstreamPathTemplate": "/UserYarat{User}",
       "UpstreamHttpMethod": [ "Post" ]
     },
+    //Car
     {
       "DownstreamPathTemplate": "/api/Car/GetAll",
       "DownstreamScheme": "https",
@@ -50,7 +52,7 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Car/GetById?id={id}",
+      "DownstreamPathTemplate": "/api/Car/GetById/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -58,7 +60,7 @@
           "Port": 7273
         }
       ],
-      "UpstreamPathTemplate": "/CarniIddanTop",
+      "UpstreamPathTemplate": "/CarniIddanTop/{id}",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
@@ -74,6 +76,7 @@
       "UpstreamPathTemplate": "/CarniYangila",
       "UpstreamHttpMethod": [ "Put" ]
     },
+    //Home
     {
 
       "DownstreamPathTemplate": "/api/Home/GetAll",
@@ -88,7 +91,7 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Home/GetById?id={id}",
+      "DownstreamPathTemplate": "/api/Home/GetById/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -96,11 +99,11 @@
           "Port": 7010
         }
       ],
-      "UpstreamPathTemplate": "/HomeniOlIddan{id}",
+      "UpstreamPathTemplate": "/HomeniOlIddan/{id}",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Home/Delete{id}",
+      "DownstreamPathTemplate": "/api/Home/Delete/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -108,47 +111,50 @@
           "Port": 7010
         }
       ],
-      "UpstreamPathTemplate": "/HomeniOlibTashla{id}",
+      "UpstreamPathTemplate": "/HomeniOlibTashla/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    //Phone
+    {
+      "DownstreamPathTemplate": "/api/Phones/GetAll",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7263
+        }
+      ],
+      "UpstreamPathTemplate": "/TelefonlarniOl",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Phones/GetById/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7263
+        }
+      ],
+      "UpstreamPathTemplate": "/TelefonlarniOlIdOrqali/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Phones/Delete/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7263
+        }
+      ],
+      "UpstreamPathTemplate": "/TelefonniOlibTashla/{id}",
       "UpstreamHttpMethod": [ "Delete" ]
     }
+ 
+
   ],
-  {
-    "DownstreamPathTemplate": "/api/Phones/GetAll",
-    "DownstreamScheme": "https",
-    "DownstreamHostAndPorts": [
-      {
-        "Host": "localhost",
-        "Port": 7263
-      }
-    ],
-    "UpstreamPathTemplate": "/TelefonlarniOl",
-    "UpstreamHttpMethod": [ "Get" ]
-  },
-  {
-    "DownstreamPathTemplate": "/api/Phones/GetById?id={id}",
-    "DownstreamScheme": "https",
-    "DownstreamHostAndPorts": [
-      {
-        "Host": "localhost",
-        "Port": 7263
-      }
-    ],
-    "UpstreamPathTemplate": "/TelefonlarniOlIdOrqali{id}",
-    "UpstreamHttpMethod": [ "Get" ]
-  },
-  {
-    "DownstreamPathTemplate": "/api/Phones/Delete{id}",
-    "DownstreamScheme": "https",
-    "DownstreamHostAndPorts": [
-      {
-        "Host": "localhost",
-        "Port": 7263
-      }
-    ],
-    "UpstreamPathTemplate": "/TelefonniOlibTashla{id}",
-    "UpstreamHttpMethod": [ "Delete" ]
-  }
-  ],
+   
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:5000"
   }
