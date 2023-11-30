@@ -1,11 +1,17 @@
+using byyGateWay.API;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.Configure<HostOptions>(options => 
+{ 
+    options.ShutdownTimeout = TimeSpan.FromSeconds(10);  
+  
+});
 builder.Services.AddControllers();
+builder.Services.AddHostedService<BackgroundServiceTest>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
